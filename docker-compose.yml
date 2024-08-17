@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: meu_postgres
+    environment:
+      POSTGRES_USER: gasparott0
+      POSTGRES_PASSWORD: gasparott0
+      POSTGRES_DB: microservices-example-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - my_network
+
+volumes:
+  pgdata:
+
+networks:
+  my_network:
